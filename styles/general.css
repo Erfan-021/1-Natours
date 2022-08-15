@@ -109,7 +109,7 @@ REUSEABLE STYLES
 }
 
 /* chon span inline , ma 2 tashono block mikonim ke to ye khat nabashan */
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6.2rem;
   font-weight: 400;
@@ -129,7 +129,7 @@ REUSEABLE STYLES
   */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2.4rem;
   font-weight: 700;
@@ -162,7 +162,7 @@ REUSEABLE STYLES
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #666;
 }
@@ -184,7 +184,7 @@ REUSEABLE STYLES
   transition: all 0.4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -194,7 +194,7 @@ REUSEABLE STYLES
   opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 0.6s ease-out 0.6s;
   /* dar halat aadi vaghti delay be animation bedim ro halat zaher qarar dare bad sanie delay animation ejra mishe vase inke qabl anjam animation ham ro safhe vojod nadashte bashe elementemon az in property estefade miknim in yani dar keyframe marbot be khodesh opacity 0 ro begire qabl ejra (delay)*/
   animation-fill-mode: backwards;
