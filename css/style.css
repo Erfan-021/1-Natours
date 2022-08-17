@@ -123,17 +123,6 @@ REUSEABLE STYLES
     border-radius: 10rem;
     transition: all 0.3s;
     position: relative; }
-  .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-  .btn--white {
-    background-color: #fff;
-    color: #666; }
-    .btn--white::after {
-      background-color: #fff; }
   .btn::after {
     content: "";
     display: inline-block;
@@ -146,10 +135,21 @@ REUSEABLE STYLES
     /* dar in qesmat yani btn after ma z-index ro manfi mizarim ke zire btn asli qarar begire (age z-index ro to khode btn bala bebarim kar nmikone ) */
     z-index: -1;
     transition: all 0.4s; }
-  .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    /* inja opacity heyn 0.4s transitioni ke to btn after qarar dadim 0 mishe */
-    opacity: 0; }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      /* inja opacity heyn 0.4s transitioni ke to btn after qarar dadim 0 mishe */
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #666; }
+    .btn--white::after {
+      background-color: #fff; }
   .btn--animated {
     animation: moveInBottom 0.6s ease-out 0.6s;
     /* dar halat aadi vaghti delay be animation bedim ro halat zaher qarar dare bad sanie delay animation ejra mishe vase inke qabl anjam animation ham ro safhe vojod nadashte bashe elementemon az in property estefade miknim in yani dar keyframe marbot be khodesh opacity 0 ro begire qabl ejra (delay)*/
