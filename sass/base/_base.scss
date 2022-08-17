@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  /* font-size:10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* defualt font size 16 hast va ma baraye inke har 1 rem ro 10px dar nazar begirim ke kare mohasebe kardanemon ason she , 10px ro taghsim bar defualt font size kardim ke darsadesh moshakhas she */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  padding: 3rem;
+}

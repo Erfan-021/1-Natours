@@ -1,0 +1,35 @@
+.header {
+  position: relative;
+  height: 95vh;
+  /* inja baraye inke aks zire rang biofte ono 2vom qarar midim */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.801),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  /* shayad to negah aval va size kamel safhe taghiri nabinim ama vaghti size safe kochik beshe mikhaim ke position aks az bala safhe shoro she ke zaher kharab nashe */
+  background-position: top;
+
+  /* polygon (x y , x y , x y , x y) va x-y az chap bala shoro va har chand ta x-y mishe estefade kard ke shape haye mokhtalef mishe sakht https://bennettfeely.com/clippy/ */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.6rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
