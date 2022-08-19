@@ -6,7 +6,7 @@
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.6rem 4rem;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
     border-radius: 10rem;
     transition: all 0.3s;
     position: relative;
@@ -47,7 +47,7 @@
 
   &--white {
     background-color: $color-white;
-    color: $color-gray-dark;
+    color: $color-grey-dark;
 
     &::after {
       background-color: $color-white;
@@ -58,5 +58,32 @@
     animation: moveInBottom 0.6s ease-out 0.6s;
     /* dar halat aadi vaghti delay be animation bedim ro halat zaher qarar dare bad sanie delay animation ejra mishe vase inke qabl anjam animation ham ro safhe vojod nadashte bashe elementemon az in property estefade miknim in yani dar keyframe marbot be khodesh opacity 0 ro begire qabl ejra (delay)*/
     animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    display: inline-block;
+    font-size: $default-font-size;
+    font-weight: 600;
+    color: $color-primary-med;
+    text-decoration: none;
+    border-bottom: solid 1px $color-primary-med;
+    padding: 0.3rem;
+
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-primary-med;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    transform: translateY(-1px);
   }
 }
