@@ -4,7 +4,8 @@
   "description": "Test website for improve my skills",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "watch:sass": "nodemon -e scss -x \"npm run compile:sass\""
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,8 @@
   },
   "homepage": "https://github.com/Erfan-021/1-Natours#readme",
   "devDependencies": {
-    "node-sass": "^7.0.1"
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
   },
   "dependencies": {
     "jquery": "^3.6.0"

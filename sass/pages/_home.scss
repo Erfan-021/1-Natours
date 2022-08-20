@@ -3,3 +3,25 @@
   padding: 25rem 0;
   margin-top: -20vh;
 }
+
+.section-features {
+  padding: 20rem 0;
+  margin-top: -10rem;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.801),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+
+  //ba in kar kol element haye dakhel section ham skew mishe pas ba select kardan kol direct child ha skew ro bar migardonim be halat qabl mesl paein
+  transform: skewY(-6deg);
+
+  // > be manaye direct child hastesh
+  // kol in ebarat yani select kardan kool direct child haye section features
+  // age kol chil haro intori select nakonim ba ezafe kardan har mord be section feature bayad berim onja done done be mored ha transform skew reset bedim ama ba in kar har moredi ham ke be section ezafe she dg skew nmishe
+  & > * {
+    transform: skewY(6deg);
+  }
+}
