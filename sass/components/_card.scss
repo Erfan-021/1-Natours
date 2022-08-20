@@ -1,0 +1,192 @@
+.card {
+  // ***** FUNCTIONALITY *****
+
+  // perspective ro inja ezafe kardim ke vaghti mikhad rotate she tabi tar va smooth tar rotate she va yho change nashe safhe card
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+
+  &__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 52rem;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    transition: all 0.8s ease;
+
+    // baraye inke posht card ha malom nabashe va fqt ro card - hover malom she
+    backface-visibility: hidden;
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  // inja hatman bayad (-) begire ke hamon vari ke dare rotate mishe ontaraf card malom beshe va qyr tabi nabashe
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  // inja rotate posht card ro az 180 be 0 mikonim ke neveshte ha rotate nashan va hamechi aadi bashe
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  // ***** STYLE FRONT SIDE *****
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    //new property ke rang va img ke darimo ba ham tarkib mikone
+    background-blend-mode: screen;
+
+    &--1 {
+      background-image: linear-gradient(
+          to bottom right,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/nat-5.jpg);
+    }
+
+    &--2 {
+      background-image: linear-gradient(to bottom right, $color-primary-light, $color-primary-dark),
+        url(../img/nat-6.jpg);
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+          to bottom right,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../img/nat-7.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: right;
+    color: $color-white;
+    text-transform: uppercase;
+    position: absolute;
+    top: 14rem;
+    right: 2rem;
+    width: 65%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+
+    // vaghti 1 line element break mishe vase in ke har kodom ro box motefavet tashkhis bede va paddingo be tor mesal be 2 ta box ijad shode bede az in property estefade mikoinm
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  // ***** STYLE BACK SIDE *****
+
+  &__cta {
+    position: absolute;
+    width: 90%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__price-box {
+    color: $color-white;
+
+    margin-bottom: 8rem;
+  }
+
+  &__price-text {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+}

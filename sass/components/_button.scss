@@ -54,6 +54,15 @@
     }
   }
 
+  &--green {
+    background-color: $color-primary-med;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary-med;
+    }
+  }
+
   &--animated {
     animation: moveInBottom 0.6s ease-out 0.6s;
     /* dar halat aadi vaghti delay be animation bedim ro halat zaher qarar dare bad sanie delay animation ejra mishe vase inke qabl anjam animation ham ro safhe vojod nadashte bashe elementemon az in property estefade miknim in yani dar keyframe marbot be khodesh opacity 0 ro begire qabl ejra (delay)*/
