@@ -13,6 +13,7 @@
   background-position: top;
 
   /* polygon (x y , x y , x y , x y) va x-y az chap bala shoro va har chand ta x-y mishe estefade kard ke shape haye mokhtalef mishe sakht https://bennettfeely.com/clippy/ */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   &__logo-box {
