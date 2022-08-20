@@ -1,0 +1,43 @@
+.composition {
+  position: relative;
+
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color_black, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    transition: all 0.3s;
+
+    // outline offset fasele beyn outline va content maro moshakhas mikone ke dar paein ezafe kardim
+    outline-offset: 2rem;
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+
+    &--p3 {
+      left: 20%;
+      top: 12rem;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 2.5rem 4rem rgba($color_black, 0.5);
+
+      // kar border ro anjam mide ama mitonim ba estefade az outline offset fasele bedim besh
+      outline: 1.5rem solid $color-primary-med;
+      z-index: 1;
+    }
+  }
+
+  // baraye inke vaghti ro yki az aksa hover mikonim 2 taye dg kochik beshan
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.92);
+  }
+}
