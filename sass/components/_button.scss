@@ -1,5 +1,6 @@
 .btn {
   /* inja be btn position reletive midim ke be btn::after  absolute bedim va ono zire btn asli qararesh bedim */
+  &,
   &:link,
   &:visited {
     display: inline-block;
@@ -10,6 +11,10 @@
     border-radius: 10rem;
     transition: all 0.3s;
     position: relative;
+
+    // change for <button> element
+    border: none;
+    cursor: pointer;
   }
 
   /* inja chon btn seudo elemente after grfte yani child btn hast pas height o width 100% midim ke ham andaze khode btn beshe  */

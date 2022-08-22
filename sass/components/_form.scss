@@ -1,0 +1,100 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    display: block;
+    font-family: inherit;
+    color: inherit;
+    background-color: rgba($color-white, 0.6);
+    font-size: 1.6rem;
+    padding: 1.5rem 2rem;
+    border-radius: 3px;
+    border: none;
+    transition: all 0.3s;
+
+    //  baraye in ke vaghti ro input click mikonim 3px be paein push dade nashe border bottomi ke be input focus dadimo inja ham mizarim ama ba range transparent ke dg on 3px push ro nadashte bashim
+    border-bottom: 3px solid transparent;
+    width: 90%;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+      border-bottom: 3px solid $color-primary-med;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $color-grey-dark;
+    transition: all 0.4s;
+  }
+
+  // inja + be manaye sibiling selector hast yani avalin element bad az input form ke label basharo select kone ( tavajoh = avalin bad az on classi ke goftim )
+  // age bekhyim bad az on classi ke mikhaim ro select konim bayad az ~ estefade konim jaye +
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__radio-group {
+    display: inline-block;
+    width: 49%;
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    padding-left: 5rem;
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__radio-btn {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary-med;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      background-color: $color-primary-med;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+  }
+
+  &__radio-input:checked ~ &__radio-label &__radio-btn::after {
+    opacity: 1;
+  }
+}
