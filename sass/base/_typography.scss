@@ -44,11 +44,7 @@
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(
-    to right,
-    $color-primary-light,
-    $color-primary-dark
-  );
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
 
   // baraye in ke background image ke ma rang gradient dadim fqt ro text emal beshe va dg halat box manand posht nevshte nabashe az in property estefade mikonim
   background-clip: text;
