@@ -437,6 +437,69 @@ body {
 .form__radio-input:checked ~ .form__radio-label .form__radio-btn::after {
   opacity: 1; }
 
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2500;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s; }
+  .popup__content {
+    position: relative;
+    background-color: #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: table;
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 0;
+    transition: all 0.5s 0.2s; }
+  .popup__left {
+    width: 33.33333%;
+    display: table-cell; }
+  .popup__right {
+    width: 66.666667%;
+    padding: 5rem;
+    display: table-cell;
+    vertical-align: middle; }
+  .popup__img {
+    display: block;
+    width: 100%; }
+  .popup__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 6rem;
+    column-rule: 1px solid #ddd; }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup:target .popup__content {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1; }
+  .popup__close:link, .popup__close:visited {
+    display: inline-block;
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 3rem;
+    text-decoration: none;
+    color: #666;
+    line-height: 1;
+    transition: all 0.2s; }
+  .popup__close:hover, .popup__close:active {
+    color: #55c57a; }
+
 .story {
   width: 75%;
   margin: 0 auto;
@@ -608,6 +671,7 @@ body {
   z-index: 1500;
   opacity: 0;
   width: 0;
+  visibility: hidden;
   transition: all 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6); }
 
 .navigation__list {
@@ -649,7 +713,8 @@ body {
 
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;
-  width: 100%; }
+  width: 100%;
+  visibility: visible; }
 
 .navigation__icon {
   position: relative;
