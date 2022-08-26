@@ -7,18 +7,23 @@
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
   transition: all 0.3s;
 
+  @include respond(tab) {
+    padding: 2rem;
+  }
+
   &__icon {
     font-size: 6rem;
     margin-bottom: 0.7rem;
 
-    // baraye in model rang dadan ha hatman bayad havasemon bashe display inline-block bashe vagarna nvshte ya icon bug mikhore
     display: inline-block;
     background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
-    // inja chon icon ma text hast az clip text estefade kardim
     background-clip: text;
     -webkit-background-clip: text;
-    // va hamintor az cloro estefade kardim chon texte
     color: transparent;
+
+    @include respond(tab) {
+      margin-bottom: 0;
+    }
   }
 
   &:hover {

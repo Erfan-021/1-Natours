@@ -12,3 +12,54 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+// MEDIA QUERY MANAGER
+/*
+0-600px:      Phone
+600-900px:    Tablet
+900-1200px:   Tablet Landscape
+
+[1200-1800] Normal Styles Applies
+
++ 1800px:     Big desktop
+
+
+$breakpoints
+- phone
+- tab
+- tab-land
+- big-desk
+
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    // 600px
+    @media only screen and (max-width: 37em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab {
+    // 900px
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    // 1200px
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desk {
+    // 1800px  // in hatman bayad min width bashe
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

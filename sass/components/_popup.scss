@@ -4,11 +4,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba($color-black, 0.8);
+  background-color: rgba($color-black, 0.5);
   z-index: 2500;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s;
+
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 
   &__content {
     position: relative;
@@ -21,17 +24,23 @@
     @include absCenter;
 
     display: table;
-
-    // vase inke be animation popup scale ro ham ezfe konim yani vaghti ke safe popup zahr mishe az scale 50% shoro she va 100% she majborim be content scale bedim vali chon mixin absCenter darim va dar onja az transform traslate estefade kardim va har element mitone 1 bar az transform estefade kone ma 1 bar dg translate mixin absCenter ro ham inja mizarim ke bug nakhore.
     transform: translate(-50%, -50%) scale(0.1);
     opacity: 0;
     transition: all 0.5s 0.2s;
+
+    @include respond(tab) {
+      width: 85%;
+    }
   }
 
   &__left {
     width: 33.33333%;
-
     display: table-cell;
+
+    @include respond(tab) {
+      width: 100%;
+      display: inline-block;
+    }
   }
 
   &__right {
@@ -40,11 +49,24 @@
 
     display: table-cell;
     vertical-align: middle;
+
+    @include respond(tab) {
+      width: 100%;
+      display: inline-block;
+    }
+
+    @include respond(phone) {
+      padding: 3rem;
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
+
+    @include respond(tab) {
+      display: none;
+    }
   }
 
   &__text {
@@ -54,6 +76,10 @@
     column-count: 2;
     column-gap: 6rem;
     column-rule: 1px solid $color-grey-light-2;
+
+    @include respond(phone) {
+      column-count: 1;
+    }
   }
 
   // open states

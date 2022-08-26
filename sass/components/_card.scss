@@ -1,7 +1,6 @@
 .card {
   // ***** FUNCTIONALITY *****
 
-  // perspective ro inja ezafe kardim ke vaghti mikhad rotate she tabi tar va smooth tar rotate she va yho change nashe safhe card
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
@@ -17,8 +16,7 @@
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
     transition: all 0.8s ease;
-
-    // baraye inke posht card ha malom nabashe va fqt ro card - hover malom she
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
     &--front {
@@ -29,37 +27,23 @@
       transform: rotateY(180deg);
 
       &-1 {
-        background-image: linear-gradient(
-          to bottom right,
-          $color-secondary-light,
-          $color-secondary-dark
-        );
+        background-image: linear-gradient(to bottom right, $color-secondary-light, $color-secondary-dark);
       }
 
       &-2 {
-        background-image: linear-gradient(
-          to bottom right,
-          $color-primary-light,
-          $color-primary-dark
-        );
+        background-image: linear-gradient(to bottom right, $color-primary-light, $color-primary-dark);
       }
 
       &-3 {
-        background-image: linear-gradient(
-          to bottom right,
-          $color-tertiary-light,
-          $color-tertiary-dark
-        );
+        background-image: linear-gradient(to bottom right, $color-tertiary-light, $color-tertiary-dark);
       }
     }
   }
 
-  // inja hatman bayad (-) begire ke hamon vari ke dare rotate mishe ontaraf card malom beshe va qyr tabi nabashe
   &:hover &__side--front {
     transform: rotateY(-180deg);
   }
 
-  // inja rotate posht card ro az 180 be 0 mikonim ke neveshte ha rotate nashan va hamechi aadi bashe
   &:hover &__side--back {
     transform: rotateY(0);
   }
@@ -72,15 +56,10 @@
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
-    //new property ke rang va img ke darimo ba ham tarkib mikone
     background-blend-mode: screen;
 
     &--1 {
-      background-image: linear-gradient(
-          to bottom right,
-          $color-secondary-light,
-          $color-secondary-dark
-        ),
+      background-image: linear-gradient(to bottom right, $color-secondary-light, $color-secondary-dark),
         url(../img/nat-5.jpg);
     }
 
@@ -90,11 +69,7 @@
     }
 
     &--3 {
-      background-image: linear-gradient(
-          to bottom right,
-          $color-tertiary-light,
-          $color-tertiary-dark
-        ),
+      background-image: linear-gradient(to bottom right, $color-tertiary-light, $color-tertiary-dark),
         url(../img/nat-7.jpg);
     }
   }
@@ -114,7 +89,6 @@
   &__heading-span {
     padding: 1rem 1.5rem;
 
-    // vaghti 1 line element break mishe vase in ke har kodom ro box motefavet tashkhis bede va paddingo be tor mesal be 2 ta box ijad shode bede az in property estefade mikoinm
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
 
@@ -188,5 +162,50 @@
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
+  }
+
+  // @include respond(tab) {
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    // ***** FUNCTIONALITY *****
+    height: auto;
+    border-radius: 3px;
+    background-color: $color-white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &__side {
+      position: relative;
+      height: auto;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0);
+
+        -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    // ***** STYLE BACK SIDE *****
+
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 6rem 3rem 3rem 3rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+    }
   }
 }

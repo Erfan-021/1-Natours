@@ -1,5 +1,3 @@
-// utilitie class be class hai gofte mishe ke fqt ye hadaf vase ejra daran
-
 .u-center-text {
   text-align: center !important;
 }
@@ -10,12 +8,24 @@
 
 .u-margin-bottom-med {
   margin-bottom: 4rem !important;
+
+  @include respond(tab) {
+    margin-bottom: 3rem !important;
+  }
 }
 
 .u-margin-bottom-big {
   margin-bottom: 8rem !important;
+
+  @include respond(tab) {
+    margin-bottom: 6rem !important;
+  }
 }
 
 .u-margin-top-big {
   margin-top: 8rem !important;
+
+  @include respond(tab) {
+    margin-top: 6rem !important;
+  }
 }

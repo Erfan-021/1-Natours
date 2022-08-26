@@ -11,8 +11,19 @@
 html {
   /* font-size:10px; */
   /* 10px / 16px = 0.625 = 62.5% */
-  /* defualt font size 16 hast va ma baraye inke har 1 rem ro 10px dar nazar begirim ke kare mohasebe kardanemon ason she , 10px ro taghsim bar defualt font size kardim ke darsadesh moshakhas she */
   font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px ,  9/16 = 56.25%
+  }
+
+  @include respond(tab) {
+    font-size: 50%; // 1rem = 8px ,  8/16 = 50%
+  }
+
+  @include respond(big-desk) {
+    font-size: 75%; // 1rem = 12px ,  12/16 = 75%
+  }
 }
 
 body {
@@ -21,4 +32,13 @@ body {
   line-height: 1.7;
   color: $color-grey-dark;
   padding: 3rem;
+
+  @include respond(tab) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary-med;
+  color: $color-white;
 }

@@ -15,13 +15,22 @@
     box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
     text-align: center;
     cursor: pointer;
+
+    @include respond(tab) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
+
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__background {
     height: 6rem;
     width: 6rem;
     border-radius: 50%;
-    // radial gradient yani color az vasat be samte side ha be rang 2vom taghir mikonan
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
     position: fixed;
     top: 6.5rem;
@@ -30,6 +39,16 @@
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 
     // transform: scale(85);
+
+    @include respond(tab) {
+      top: 3.6rem;
+      right: 3.6rem;
+    }
+
+    @include respond(phone) {
+      top: 3.2rem;
+      right: 3.2rem;
+    }
   }
 
   &__nav {
@@ -87,7 +106,6 @@
 
     &:hover,
     &:active {
-      // ro halat aadi (link) background size ro ziad kardim ke posht link ha hide she va ba position 100% va animation vaghti ke hoveresh mikonim zaher mishe
       background-position: 100%;
       color: $color-primary-med;
     }

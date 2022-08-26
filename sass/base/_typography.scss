@@ -1,13 +1,9 @@
 .heading-primary {
   color: $color-white;
   text-transform: uppercase;
-
-  /* baraye inke vaghti animation ejra mishe akharesh larzesh riz etefaq nayofte az in ravesh baraye fix kardanesh estefade mikonim */
   backface-visibility: hidden;
-
   margin-bottom: 6rem;
 
-  /* chon span inline , ma 2 tashono block mikonim ke to ye khat nabashan */
   &--main {
     display: block;
     font-size: 6.2rem;
@@ -17,15 +13,12 @@
     animation-name: moveInLeft;
     animation-duration: 0.9s;
 
-    /* ease out yani dar akhar (out) slow mishe animation */
     animation-timing-function: ease-out;
 
-    /*
-   animation-delay: 1s; 
-   
-   tedad tekrare animation
-   animation-iteration-count: 3;
-  */
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
   }
 
   &--sub {
@@ -33,9 +26,11 @@
     font-size: 2.4rem;
     font-weight: 700;
     letter-spacing: 1.6rem;
-
-    /* kotah shodeye 3 property name - duration - function */
     animation: moveInRight 0.9s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.4rem;
+    }
   }
 }
 
@@ -46,13 +41,20 @@
   display: inline-block;
   background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
 
-  // baraye in ke background image ke ma rang gradient dadim fqt ro text emal beshe va dg halat box manand posht nevshte nabashe az in property estefade mikonim
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 
   letter-spacing: 2px;
   transition: all 0.3s;
+
+  @include respond(tab) {
+    font-size: 2.9rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.4rem;
+  }
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);

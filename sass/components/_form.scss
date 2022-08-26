@@ -14,9 +14,12 @@
     border: none;
     transition: all 0.3s;
 
-    //  baraye in ke vaghti ro input click mikonim 3px be paein push dade nashe border bottomi ke be input focus dadimo inja ham mizarim ama ba range transparent ke dg on 3px push ro nadashte bashim
     border-bottom: 3px solid transparent;
     width: 90%;
+
+    @include respond(tab) {
+      width: 100%;
+    }
 
     &:focus {
       outline: none;
@@ -43,9 +46,6 @@
     transition: all 0.4s;
   }
 
-  // inja + be manaye sibiling selector hast yani avalin element bad az input form ke label basharo select kone ( tavajoh = avalin bad az on classi ke goftim )
-  // age bekhyim bad az on classi ke mikhaim ro select konim bayad az ~ estefade konim jaye +
-
   &__input:placeholder-shown + &__label {
     opacity: 0;
     visibility: hidden;
@@ -55,6 +55,13 @@
   &__radio-group {
     display: inline-block;
     width: 49%;
+
+    @include respond(tab) {
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
   }
 
   &__radio-input {
